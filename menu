@@ -1,0 +1,63 @@
+# ==========================================
+# DEPENDENCIES
+# ==========================================
+node_modules/
+.pnpm-store/
+
+# ==========================================
+# ENVIRONMENT & SECRETS (Never track these!)
+# ==========================================
+.env
+.env.local
+.env*.local
+!.env.example
+
+# ==========================================
+# BUILD OUTPUTS & GENERATED FOLDERS
+# ==========================================
+.next/
+dist/
+build/
+out/
+.output/
+.vercel/
+.turbo/
+
+# ==========================================
+# FRAMEWORK & TOOLING CACHES
+# ==========================================
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.vite/
+.turbo/
+.cache/
+tsconfig.tsbuildinfo
+
+# ==========================================
+# TESTING & COVERAGE
+# ==========================================
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# ==========================================
+# OPERATING SYSTEM & EDITOR FILES
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# ==========================================
+# LOGS & DEBUG FILES
+# ==========================================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
