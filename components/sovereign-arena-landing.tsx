@@ -12,6 +12,8 @@ import {
   ArrowRight, 
   Lock 
 } from 'lucide-react';
+import CustomPayPalButton from './paypal-button';
+
 
 export default function SovereignArenaLanding() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'quarterly'>('quarterly');
@@ -289,9 +291,10 @@ export default function SovereignArenaLanding() {
               <button className="w-full py-4 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:brightness-110 transition shadow-lg shadow-cyan-500/20">
                 Pay with Credit Card
               </button>
-              <button className="w-full py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-amber-400 font-bold hover:bg-slate-800 transition flex items-center justify-center gap-2 text-sm">
-                <span>Pay with PayPal</span>
-              </button>
+              <CustomPayPalButton
+                amount={billingCycle === 'monthly' ? '299.00' : '799.00'}
+                planName={`Single Node Core (${billingCycle === 'monthly' ? 'Monthly' : 'Quarterly'})`}
+              />
             </div>
           </div>
 
@@ -338,9 +341,10 @@ export default function SovereignArenaLanding() {
               <button className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold hover:brightness-110 transition shadow-lg shadow-cyan-500/25">
                 Deploy Enterprise Cluster
               </button>
-              <button className="w-full py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-amber-400 font-bold hover:bg-slate-800 transition flex items-center justify-center gap-2 text-sm">
-                <span>Pay with PayPal</span>
-              </button>
+              <CustomPayPalButton
+                amount={billingCycle === 'monthly' ? '899.00' : '2399.00'}
+                planName={`Enterprise HA Cluster (${billingCycle === 'monthly' ? 'Monthly' : 'Quarterly'})`}
+              />
             </div>
           </div>
         </div>
