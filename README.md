@@ -114,6 +114,19 @@ This project is optimized for Vercel deployment:
 
 Add your environment variables in the Vercel dashboard under "Settings" → "Environment Variables"
 
+### PayPal checkout
+
+The pricing tiers use PayPal checkout. Set `NEXT_PUBLIC_PAYPAL_CLIENT_ID` to the
+client ID of your PayPal REST app in Vercel's project Settings → Environment
+Variables. Use a live app for real payments and a sandbox app for testing. Never
+put the PayPal secret in a `NEXT_PUBLIC_` variable. Redeploy after changing this
+value because Next.js embeds public environment variables at build time.
+
+If checkout reports that PayPal could not load, check the app client ID and test
+without browser content blockers. A successful build alone does not verify a
+payment: test approval and capture in PayPal sandbox before accepting payments.
+The pricing buttons currently make one-time payments, not recurring subscriptions.
+
 ## 🔒 Security
 
 - Built-in security headers with Next.js

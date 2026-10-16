@@ -288,9 +288,6 @@ export default function SovereignArenaLanding() {
             </div>
 
             <div className="space-y-3">
-              <button className="w-full py-4 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:brightness-110 transition shadow-lg shadow-cyan-500/20">
-                Pay with Credit Card
-              </button>
               <CustomPayPalButton
                 amount={billingCycle === 'monthly' ? '299.00' : '799.00'}
                 planName={`Single Node Core (${billingCycle === 'monthly' ? 'Monthly' : 'Quarterly'})`}
@@ -338,9 +335,6 @@ export default function SovereignArenaLanding() {
             </div>
 
             <div className="space-y-3">
-              <button className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold hover:brightness-110 transition shadow-lg shadow-cyan-500/25">
-                Deploy Enterprise Cluster
-              </button>
               <CustomPayPalButton
                 amount={billingCycle === 'monthly' ? '899.00' : '2399.00'}
                 planName={`Enterprise HA Cluster (${billingCycle === 'monthly' ? 'Monthly' : 'Quarterly'})`}
