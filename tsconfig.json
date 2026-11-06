@@ -25,7 +25,10 @@
     ],
     "allowJs": true,
     "incremental": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": [
     "next-env.d.ts",
