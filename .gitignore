@@ -38,3 +38,4 @@ yarn-error.log*
 
 # Misc
 .turbo
+next-env.d.ts
