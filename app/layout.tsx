@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -101,6 +102,7 @@ export default function RootLayout({
         <footer className="border-t border-zinc-800 bg-zinc-950 py-8 text-center text-sm text-zinc-400">
           <p>&copy; 2026 Sovereign Arena. All rights reserved.</p>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
