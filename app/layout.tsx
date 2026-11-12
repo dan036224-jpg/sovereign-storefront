@@ -1,106 +1,25 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Sovereign Arena",
-  description: "Modern e-commerce storefront for Sovereign Arena",
+  metadataBase: new URL('https://sovereignarena.com'),
+  title: 'Sovereign Arena | The Forge & The Bootcamp',
+  description: 'Local-first, zero-trust software. Explore the Logic Engine gauntlet and access The Forge and The Bootcamp with a verified subscription.',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="bg-zinc-950 text-white">
-        <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur">
-          <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-4">
-              {/* Logo/Brand */}
-              <div className="flex items-center gap-8">
-                <h1 className="text-2xl font-bold tracking-tighter">
-                  ⚔️ Sovereign Arena
-                </h1>
-                
-                {/* Navigation Links */}
-                <ul className="hidden gap-6 md:flex">
-                  <li>
-                    <a
-                      href="#"
-                      className="text-sm font-medium transition-colors hover:text-blue-400"
-                    >
-                      Products
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-sm font-medium transition-colors hover:text-blue-400"
-                    >
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-sm font-medium transition-colors hover:text-blue-400"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Cart Badge */}
-              <div className="flex items-center gap-4">
-                <button className="relative rounded-lg p-2 transition-colors hover:bg-zinc-800">
-                  <svg
-                    className="h-6 w-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m10 0l2 9m-12 0h14M9 6h6"
-                    />
-                  </svg>
-                  <span className="absolute right-0 top-0 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs font-bold">
-                    0
-                  </span>
-                </button>
-
-                {/* Menu Button - Mobile */}
-                <button className="rounded-lg p-2 transition-colors hover:bg-zinc-800 md:hidden">
-                  <svg
-                    className="h-6 w-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+        <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-emerald-400 focus:p-3 focus:text-black">Skip to content</a>
+        <header className="sticky top-0 z-40 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur">
+          <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8">
+            <a href="/" className="text-lg font-semibold tracking-tight"><span className="mr-2 text-emerald-400" aria-hidden="true">◈</span>SOVEREIGN <span className="text-zinc-400">ARENA</span></a>
+            <div className="flex gap-5 font-mono text-xs text-zinc-300"><a href="/#gauntlet" className="hover:text-emerald-300">Gauntlet</a><a href="/#architecture" className="hover:text-emerald-300">Architecture</a><a href="/#software" className="hover:text-emerald-300">Software ↗</a></div>
           </nav>
         </header>
-
-        <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          {children}
-        </main>
-
-        <footer className="border-t border-zinc-800 bg-zinc-950 py-8 text-center text-sm text-zinc-400">
-          <p>&copy; 2026 Sovereign Arena. All rights reserved.</p>
-        </footer>
+        <main id="content" className="mx-auto max-w-7xl px-5 py-8 sm:px-8">{children}</main>
+        <footer className="border-t border-zinc-800 px-5 py-8 font-mono text-xs text-zinc-400"><div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-4"><p>© 2026 Sovereign Arena / sovereignarena.com</p><p>SOFTWARE ONLY. LOCAL FIRST. ZERO TRUST.</p></div></footer>
       </body>
     </html>
   );
