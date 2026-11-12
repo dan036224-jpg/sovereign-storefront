@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const appName = process.env.NEXT_PUBLIC_APP_NAME || "v0";
+
 export const metadata: Metadata = {
-  title: "Sovereign // Storefront",
+  title: `${appName} // Launching Soon`,
   description:
-    "Authorized asset exchange for Sovereign developer tooling: Firestore optimization kits and security middleware.",
+    "A high-performance platform designed to scale with your vision. Minimal setup, maximum impact.",
 };
 
 export default function RootLayout({

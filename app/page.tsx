@@ -1,5 +1,5 @@
-import SovereignArenaLanding from "../components/sovereign-arena-landing";
+import V0Landing from "../components/v0-landing";
 
 export default function Home() {
-  return <SovereignArenaLanding />;
+  return <V0Landing />;
 }
